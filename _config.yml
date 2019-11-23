@@ -103,3 +103,5 @@ friends: [
         href: "http://concert.yananhuazai.cn"
     }
 ]
+
+theme: jekyll-theme-cayman
