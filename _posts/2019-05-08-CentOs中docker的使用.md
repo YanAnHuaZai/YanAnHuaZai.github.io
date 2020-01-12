@@ -6,7 +6,7 @@ date: 2019-05-08
 author: 华仔
 header-img: img/post-bg-debug.png
 catalog: true
-tags:
+tags: 
     - Java
     - Docker
 ---
@@ -89,6 +89,15 @@ docker rm container_id #container_id:容器id
 ```shell
 docker start container_id
 docker stop container_id
+```
+
+### docker容器在docker启动时自动启动
+```shell
+# 如果还未创建容器
+docker run --restart=always
+
+# 如果已经创建容器
+docker update --restart=always <CONTAINER ID>
 ```
 
 
@@ -174,5 +183,3 @@ docker run -d --name kafka --publish 9092:9092 --link huazai-zookeeper --env KAF
 
 其中KAFKA_ADVERTISED_HOST_NAME改成宿主句ip（docker所在的主机的ip）
 ```
-
-
