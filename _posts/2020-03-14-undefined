@@ -1,13 +1,11 @@
 ---
-title: 测试博客标题
-subtitle: 测试
+title: 测试
+subtitle: 123
 date: 2020-03-14
-author: 华仔
+author: 222
+header-img: img/post-bg-debug.png
 catalog: true
 tags: 
-    - 测试
+    - 222
 ---
-又是一个测试博客
-
-
-2
+aa
