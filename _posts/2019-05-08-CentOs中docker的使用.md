@@ -177,9 +177,25 @@ docker pull wurstmeister/kafka
 ```
 
 2. 创建并启动zookeeper、kafka容器
+
 ```shell
 docker run -d --name huazai-zookeeper -p 2181:2181 -t wurstmeister/zookeeper
 docker run -d --name kafka --publish 9092:9092 --link huazai-zookeeper --env KAFKA_ZOOKEEPER_CONNECT=huazai-zookeeper:2181 --env KAFKA_ADVERTISED_HOST_NAME=192.168.66.202 --env KAFKA_ADVERTISED_PORT=9092 --volume /etc/localtime:/etc/localtime wurstmeister/kafka:latest
 
 其中KAFKA_ADVERTISED_HOST_NAME改成宿主句ip（docker所在的主机的ip）
+```
+
+
+### docker中安装rabbitmq
+
+1. 拉去镜像
+
+```shell
+docker pull rabbitmq:management
+```
+
+2. 创建并启动rabbitmq，并开放15672、5672端口
+
+```shell
+docker run -dit --name huazai-rabbitmq -e RABBITMQ_DEFAULT_USER=admin -e RABBITMQ_DEFAULT_PASS=admin -p 15672:15672 -p 5672:5672 rabbitmq:management
 ```
